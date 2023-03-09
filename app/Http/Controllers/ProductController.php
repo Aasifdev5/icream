@@ -15,7 +15,7 @@ class ProductController extends Controller
 
     public function product(){
         $products=DB::table('product')->get();
-        return view('/product',['products'=>$products]);
+        return view('/product',['product'=>$products]);
     }
 
 }

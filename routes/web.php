@@ -37,4 +37,4 @@ use App\Http\Controllers\ProductController;
 // });
 
 Route::get('/',[ProductController::class,'index'])->name('home');
-Route::get('/product',[ProductController::class,'products'])->name('products');
+Route::get('/product',[ProductController::class,'product'])->name('product');
