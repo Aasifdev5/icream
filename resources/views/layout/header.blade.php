@@ -77,17 +77,17 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="/" class="nav-item nav-link active">Home</a>
-                        <a href="about" class="nav-item nav-link">About</a>
-                        <a href="product" class="nav-item nav-link">Product</a>
+                        <a href="/" class="nav-item nav-link {{ request()->is('/') ? 'active':'' }}">Home</a>
+                        <a href="/about" class="nav-item nav-link {{ request()->is('about') ? 'active':'' }}">About</a>
+                        <a href="product" class="nav-item nav-link {{ request()->is('product') ? 'active':'' }}">Product</a>
                     </div>
                     <a href="/" class="navbar-brand mx-5 d-none d-lg-block">
                         <h1 class="m-0 display-4 text-primary"><span class="text-secondary">i</span>CREAM</h1>
                     </a>
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="service" class="nav-item nav-link">Service</a>
-                        <a href="gallery" class="nav-item nav-link">Gallery</a>
-                        <a href="contact" class="nav-item nav-link">Contact</a>
+                        <a href="service" class="nav-item nav-link {{ request()->is('service') ? 'active':'' }}">Service</a>
+                        <a href="gallery" class="nav-item nav-link {{ request()->is('gallery') ? 'active':'' }}">Gallery</a>
+                        <a href="contact" class="nav-item nav-link {{ request()->is('contact') ? 'active':'' }}">Contact</a>
                     </div>
                 </div>
             </nav>
