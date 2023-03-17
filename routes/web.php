@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
@@ -32,9 +33,12 @@ Route::get('/service',function(){
 Route::get('/gallery',function(){
     return view('gallery');
 });
-Route::get('/contact',function(){
-    return view('contact');
-});
+// Route::get('/contact',function(){
+//     return view('contact');
+// });
 
 Route::get('/',[ProductController::class,'index'])->name('home');
 Route::get('/product',[ProductController::class,'product'])->name('product');
+
+Route::get('/contact',[ContactController::class,'index'])->name('index');
+Route::post('/upload',[ContactController::class,'upload'])->name('upload');
