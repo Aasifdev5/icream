@@ -42,3 +42,8 @@ Route::get('/product',[ProductController::class,'product'])->name('product');
 
 Route::get('/contact',[ContactController::class,'index'])->name('index');
 Route::post('/upload',[ContactController::class,'upload'])->name('upload');
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
