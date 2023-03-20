@@ -448,7 +448,7 @@
         </nav>
        
 
-        <main class="py-4">
+        <main style="padding-top: 4.5rem;">
             @yield('content')
         </main>
     </div>
