@@ -64,7 +64,7 @@ class User extends Controller
     public function logout(){
         if(Session::has('loginId')){
             Session::pull('loginId');
-            redirect('user_login');
+            return redirect('User_login');
         }
     }
 
