@@ -12,6 +12,13 @@ class User extends Controller
     {
         // return view('User_login');
     }
+    public function User_login(){
+        return view('User_login');
+    }
+
+    public function register(){
+        return view('user_register');
+    }
     public function registeration(Request $request)
     {
         $customer = new Customers();

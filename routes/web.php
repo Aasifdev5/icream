@@ -36,23 +36,17 @@ Route::get('/gallery',function(){
 Route::get('/login',function(){
     return view('login');
 });
-Route::get('/User_login',function(){
-    return view('User_login');
-});
+Route::get('/User_login',[User::class,'User_login'])->name('User_login')->middleware('alreadyLoggedIn');
 Route::get('/',[ProductController::class,'index'])->name('home');
 Route::get('/product',[ProductController::class,'product'])->name('product');
 
 Route::get('/contact',[ContactController::class,'index'])->name('index');
 Route::post('/upload',[ContactController::class,'upload'])->name('upload');
 
-Route::get('/user_register',function(){
-    return view('user_register');
-});
+Route::get('/register',[User::class,'register'])->name('register')->middleware('alreadyLoggedIn');
 Route::post('/registeration',[User::class,'registeration'])->name('registeration');
 Route::post('/customer_login',[User::class,'customer_login'])->name('customer_login');
-Route::get('/dashboard',[User::class,'dashboard'])->name('dashboard');
+Route::get('/dashboard',[User::class,'dashboard'])->name('dashboard')->middleware('isLoggedIn');
 Route::get('/logout',[User::class,'logout'])->name('logout');
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
+
