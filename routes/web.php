@@ -33,9 +33,7 @@ Route::get('/service',function(){
 Route::get('/gallery',function(){
     return view('gallery');
 });
-Route::get('/login',function(){
-    return view('login');
-});
+
 Route::get('/User_login',[User::class,'User_login'])->name('User_login')->middleware('alreadyLoggedIn');
 Route::get('/',[ProductController::class,'index'])->name('home');
 Route::get('/product',[ProductController::class,'product'])->name('product');

@@ -16,7 +16,7 @@ class User extends Controller
         return view('User_login');
     }
 
-    public function register(){
+    public function user_register(){
         return view('user_register');
     }
     public function registeration(Request $request)
@@ -70,7 +70,8 @@ class User extends Controller
 
     public function logout(){
         if(Session::has('loginId')){
-            Session::pull('loginId');
+            Session::forget('loginId');
+            
             return redirect('User_login');
         }
     }

@@ -20,5 +20,7 @@ class AlreadyLoggedIn
             return back();
         }
         return $next($request);
+        
+        
     }
 }
